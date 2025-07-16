@@ -1,0 +1,15 @@
+```mermaid
+sequenceDiagram
+    participant Usuario
+    participant Navegador
+    participant Servidor
+    participant BaseDeDatos
+
+    Usuario->>Navegador: Escribe texto en el campo
+    Usuario->>Navegador: Hace clic en "Guardar"
+    Navegador->>Servidor: POST /new_note
+    Servidor->>BaseDeDatos: INSERT INTO notes...
+    BaseDeDatos-->>Servidor: Respuesta: éxito
+    Servidor-->>Navegador: Redirección o respuesta
+    Navegador-->>Usuario: Muestra mensaje o recarga página
+```
